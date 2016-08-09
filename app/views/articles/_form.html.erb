@@ -1,0 +1,28 @@
+<%= form_for(@article) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.hidden_field :content, id: :content %>
+
+  <div id="editor">
+
+  </div>
+
+  <%= f.submit %>
+<% end %>
+
+
+<% content_for :scripts do %>
+<script>
+  $(function () {
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/markdown");
+    editor.setValue($('#content').val());
+
+    editor.getSession().on('change', function(e) {
+      $('#content').val(editor.getValue());
+    });
+  })
+</script>
+<% end %>

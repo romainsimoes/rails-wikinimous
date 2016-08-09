@@ -1,0 +1,5 @@
+<h1>Articles#show</h1>
+<ul>
+  <li><h2><%= @article.content %></h2></li>
+  <li><p><%= raw @markdown.render("#{@article.content}") %></p></li>
+</ul>
