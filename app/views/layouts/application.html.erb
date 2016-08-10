@@ -10,12 +10,14 @@
         height: 300px;
       }
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
 
   <body>
 
     <% if current_user %>
-      Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+      <div class='header'><div>SIGNED IN AS <%= current_user.name %> | <%= link_to "Logout", '/logout' %></div>
     <% else %>
       <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
     <% end %>

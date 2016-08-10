@@ -1,5 +1,7 @@
-<h1>Articles#show</h1>
-<ul>
-  <li><h2><%= @article.content %></h2></li>
-  <li><p><%= raw @markdown.render("#{@article.content}") %></p></li>
-</ul>
+</div>
+<h2><%= @article.title %></h2>
+
+
+<%= link_to '', edit_article_path(@article), { class: 'fa fa-pencil', aria_hidden: 'true' } %>
+<%= link_to '', article_path(@article), { method: :delete, class: 'fa fa-trash', aria_hidden: 'true' } %>
+<p><%= raw @markdown.render("#{@article.content}") %></p>

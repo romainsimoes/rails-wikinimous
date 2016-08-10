@@ -1,11 +1,10 @@
-<h1>Articles#index</h1>
-<li><%= link_to 'Create New', new_article_path %></li>
+<div><%= link_to 'CREATE NEW ARTICLE', new_article_path %></div></div>
+
+<div class='welcome'><h1>WELCOME TO WIKINIMOUS</h1></div>
+
 <% @articles.each do |article| %>
-  <ul>
-    <li><%= link_to 'Edit', edit_article_path(article) %></li>
-    <li><%= link_to 'Delete', article_path(article), method: :delete %></li>
-    <li><h2><%= link_to article.title, article_path(article) %></h2></li>
-    <li><p><%= raw @markdown.render("#{article.content}") %></p></li>
-    <br>
-  </ul>
+  <div class='padded text-center'>
+    <h2><%= link_to article.title, article_path(article) %></h2>
+    <p><%= raw @markdown.render("#{article.content}") %></p>
+  <div>
 <% end %>
